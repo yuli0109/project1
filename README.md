@@ -5,8 +5,8 @@ ____________
 
 
 >variables:  
-var1 to store the word input by player1
-var2 to acount the move for input
+var1 to store the word input by player1  
+var2 to acount the move for input  
 var3 to store the character input by player2  
 
 ---------------------------------------------------
