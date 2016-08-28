@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hangman</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Righteous" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src= "scripts/jcanvas.min.js"></script>
+</head>
+<body>
+  <header id="header" class="">
+    <h1 id="bigName">Welcome to Hangman!</h1>
+    <div id="inputPart">
+      <input type="text" id="inputBox" value="Player 1 enter word here">
+      <button id="inputBut">Start</button>
+      <button id="resetBut">Reset</button>
+    </div>
+  </header>
+  <main>
+    <div class="mainLeft">
+      <div class="displayWords">
+
+      </div>
+      <div class="keyBoard">
+          <div class="row1">
+            <div class = "boardKey" id="q">Q</div>
+            <div class = "boardKey" id="w">W</div>
+            <div class = "boardKey" id="e">E</div>
+            <div class = "boardKey" id="r">R</div>
+            <div class = "boardKey" id="t">T</div>
+            <div class = "boardKey" id="y">Y</div>
+            <div class = "boardKey" id="u">U</div>
+            <div class = "boardKey" id="i">I</div>
+            <div class = "boardKey"id="o">O</div>
+            <div class = "boardKey" id="p">P</div>
+          </div>
+          <div class="row2">
+            <div class = "boardKey" id="a">A</div>
+            <div class = "boardKey" id="s">S</div>
+            <div class = "boardKey" id="d">D</div>
+            <div class = "boardKey" id="f">F</div>
+            <div class = "boardKey" id="g">G</div>
+            <div class = "boardKey" id="h">H</div>
+            <div class = "boardKey" id="j">J</div>
+            <div class = "boardKey" id="k">K</div>
+            <div class = "boardKey" id="l">L</div>
+          </div>
+          <div class="row3">
+            <div class="theChar" id="caP">Cap</div>
+            <div class = "boardKey" id="z">Z</div>
+            <div class = "boardKey" id="x">X</div>
+            <div class = "boardKey" id="c">C</div>
+            <div class = "boardKey" id="v">V</div>
+            <div class = "boardKey" id="b">B</div>
+            <div class = "boardKey" id="n">N</div>
+            <div class = "boardKey" id="m">M</div>
+            <div class="theChar" id="delete"><-</div>
+          </div>
+      </div>
+    </div>
+    <div class="mainRight">
+      <canvas id="canvas1"></canvas>
+    </div>
+  </main>
+  <footer>
+    <script src = "scripts/main.js"></script>
+  </footer>
+</body>
+</html>
