@@ -1,10 +1,17 @@
 // console.log("js is linked!");
 //Variables
 var $myCanvas = $('#canvas1');
-var wrongGuess = 0;
-var cGuess = 0;
-var showUp = 0;
-var thisNub = 0;
+var wrongGuess = 0; //The count the number of wrong guess
+var cGuess = 0; //To check if the input contain correct character
+var showUp = 0; //The number of characters displayed
+var thisNub = 0; //The length of the word
+var aniMay = null; //The setInterval for rop animation
+var aniMay2 = null; //The setInterval for head animation
+var aniMay3 = null; //The setInterval for body animation
+var aniMay4 = null; //The setInterval for left arm animation
+var aniMay5 = null; //The setInterval for right arm animation
+var aniMay6 = null; //The setInterval for left leg animation
+var aniMay7 = null; //The setInterval for right leg animation
 //Function to generate word elements in display board//
 function getWord(){
   var $theWord = $('#inputBox').val();
@@ -36,6 +43,13 @@ $('#resetBut').on('click', function(event) {
   wrongGuess = 0;
   $('div.boardKey').css('visibility','visible');
   $('#inputBox').val("");
+  clearInterval(aniMay);
+  clearInterval(aniMay2);
+  clearInterval(aniMay3);
+  clearInterval(aniMay4);
+  clearInterval(aniMay5);
+  clearInterval(aniMay6);
+  clearInterval(aniMay7);
 });
 //
 //Add Event Listener to keyboard keys
@@ -105,6 +119,13 @@ function makeSomeDraw(){
     drawRleg();
     showAnswer();
     noMoreInput();
+    aniMay = setInterval(ropAnimation, 2000);
+    aniMay2 = setInterval(headAnimation, 2000);
+    aniMay3 = setInterval(bodyAnimation, 2000);
+    aniMay4 = setInterval(larmAnimation, 2000);
+    aniMay5 = setInterval(rarmAnimation, 2000);
+    aniMay6 = setInterval(llegAnimation, 2000);
+    aniMay7 = setInterval(rlegAnimation, 2000);
   }
 };
 //
@@ -217,5 +238,82 @@ function drawRleg(){
     x2: 245, y2: 100,
     layer: true,
     name: 'rightLeg'
+  });
+}
+function ropAnimation(){
+  $myCanvas.animateLayer('ropLine',{
+    x1: 240, y1: 30,
+    x2: 235, y2: 57,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 240, y1: 30,
+    x2: 245, y2: 57,
+    },1000)
+  });
+}
+function headAnimation(){
+  $myCanvas.animateLayer('headCir',{
+    x: 236, y: 65,
+    rotate: 10
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x: 244, y: 65,
+    rotate: -10
+    },1000)
+  });
+}
+function bodyAnimation(){
+  $myCanvas.animateLayer('bodyLine',{
+    x1: 236, y1: 74,
+    x2: 232, y2: 87,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 244, y1: 74,
+    x2: 248, y2: 87,
+    },1000)
+  });
+}
+function larmAnimation(){
+  $myCanvas.animateLayer('leftArm',{
+    x1: 236, y1: 75,
+    x2: 220, y2: 82,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 244, y1: 75,
+    x2: 228, y2: 83,
+    },1000)
+  });
+}
+function rarmAnimation(){
+  $myCanvas.animateLayer('rightArm',{
+    x1: 236, y1: 75,
+    x2: 249, y2: 82,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 244, y1: 75,
+    x2: 258, y2: 82,
+    },1000)
+  });
+}
+function llegAnimation(){
+  $myCanvas.animateLayer('leftLeg',{
+    x1: 232, y1: 88,
+    x2: 228, y2: 99,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 248, y1: 88,
+    x2: 250, y2: 99,
+    },1000)
+  });
+}
+function rlegAnimation(){
+  $myCanvas.animateLayer('rightLeg',{
+    x1: 232, y1: 88,
+    x2: 234, y2: 99,
+  },1000,function(layer){
+    $(this).animateLayer(layer,{
+    x1: 248, y1: 88,
+    x2: 258, y2: 99,
+    },1000)
   });
 }
