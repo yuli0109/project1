@@ -171,7 +171,7 @@ div.displayWords{
 }
 div.nD{
   /*display: inline-block;*/
-  border: 1px solid black;
+  border: 3px outset rgba(237,105,62,0.2);
   width: 40px;
   height: 40px;
   font-family: 'Righteous', cursive;

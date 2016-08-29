@@ -42,6 +42,7 @@ $('#resetBut').on('click', function(event) {
   $('div.nD').remove();
   wrongGuess = 0;
   $('div.boardKey').css('visibility','visible');
+  $('div.theChar').css('visibility','visible');
   $('#inputBox').val("");
   clearInterval(aniMay);
   clearInterval(aniMay2);
@@ -92,6 +93,7 @@ function checkCompleted (){
   });
   if (showUp == thisNub) {
     $('div.boardKey').css('visibility','hidden');
+    $('div.theChar').css('visibility','hidden');
   }
 }
 //
@@ -118,7 +120,8 @@ function makeSomeDraw(){
   }else if (wrongGuess === 9) {
     drawRleg();
     showAnswer();
-    noMoreInput();
+    // noMoreInput();
+    runAnimay();
     aniMay = setInterval(ropAnimation, 2000);
     aniMay2 = setInterval(headAnimation, 2000);
     aniMay3 = setInterval(bodyAnimation, 2000);
@@ -128,6 +131,17 @@ function makeSomeDraw(){
     aniMay7 = setInterval(rlegAnimation, 2000);
   }
 };
+//
+//The function to run animation instantly
+function runAnimay(){
+  ropAnimation();
+  headAnimation();
+  bodyAnimation();
+  larmAnimation();
+  rarmAnimation();
+  llegAnimation();
+  rlegAnimation();
+}
 //
 function drawZero(){
   $myCanvas.drawArc({
