@@ -1,8 +1,10 @@
-console.log("js is linked!");
+// console.log("js is linked!");
 //Variables
 var $myCanvas = $('#canvas1');
 var wrongGuess = 0;
 var cGuess = 0;
+var showUp = 0;
+var thisNub = 0;
 //Function to generate word elements in display board//
 function getWord(){
   var $theWord = $('#inputBox').val();
@@ -23,6 +25,8 @@ $('#inputBut').on('click',function(event) {
       var $newDis = $(`<div class = "nD"><p>${el}</p></div>`);
       $('.displayWords').append($newDis);
   });
+  $('#inputBox').val("");
+  thisNub = wordAry.length;
 });
 //
 //Add Event Listener to reset button
@@ -40,7 +44,7 @@ $('div.boardKey').on('click', function(event) {
   var $oldFriend = $(this).text();
   $('div.nD p').each(function(index, el) {
     if(($oldFriend) == $(el).text().toUpperCase()){
-      console.log("hello");
+      // console.log("hello");
       $(el).css('visibility','visible');
       cGuess +=1;
     }
@@ -50,7 +54,32 @@ $('div.boardKey').on('click', function(event) {
     makeSomeDraw();
     wrongGuess++;
   }
+  checkCompleted();
 });
+//
+//The function will show player2 the answer when they failed
+function showAnswer(){
+  $('div.nD p').css('visibility','visible');
+}
+//
+//The function that disable further more input if player2 failed
+function noMoreInput(){
+$('div.boardKey').css('visibility','hidden');
+}
+//
+//The function to check if player2 has completed
+function checkCompleted (){
+  showUp = 0;
+  $('div.nD p').each(function(index, el) {
+    if ($(el).css('visibility') == 'visible') {
+      showUp++;
+      // console.log('showUp');
+    }
+  });
+  if (showUp == thisNub) {
+    $('div.boardKey').css('visibility','hidden');
+  }
+}
 //
 //The function to decide with step of drawing it is
 function makeSomeDraw(){
@@ -74,6 +103,8 @@ function makeSomeDraw(){
     drawLleg();
   }else if (wrongGuess === 9) {
     drawRleg();
+    showAnswer();
+    noMoreInput();
   }
 };
 //
