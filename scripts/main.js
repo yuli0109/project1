@@ -12,6 +12,11 @@ var aniMay4 = null; //The setInterval for left arm animation
 var aniMay5 = null; //The setInterval for right arm animation
 var aniMay6 = null; //The setInterval for left leg animation
 var aniMay7 = null; //The setInterval for right leg animation
+var cateFood = ['uni','oyster','pasta','ramen'];//The array for words in food category
+var cateCoty = ['france','brazil','iceland','norway'];//The array for words in country category
+var cateMovie = ['avatar', 'kingsman','titanic','missionimpossible'];//The array for words in movie category
+var cateSinger = ['taylorswift', 'madonna', 'brunomars','adele'];//The array for words in singer category
+var cateGame = ['hearthstone','starcraft','overwatch','warcraft'];//The array for words in game category
 //Function to generate word elements in display board//
 function getWord(){
   var $theWord = $('#inputBox').val();
@@ -34,6 +39,7 @@ $('#inputBut').on('click',function(event) {
   });
   $('#inputBox').val("");
   thisNub = wordAry.length;
+  $('#cateBar').css('visibility','hidden');
 });
 //
 //Add Event Listener to reset button
@@ -51,6 +57,37 @@ $('#resetBut').on('click', function(event) {
   clearInterval(aniMay5);
   clearInterval(aniMay6);
   clearInterval(aniMay7);
+  $('#cateBar').css('visibility','visible');
+  $('#inputBut').css('visibility','visible');
+});
+//
+//Add Event Listener to select bar change
+$('#cateBar').on('change', function(event) {
+  var indX = Math.round(3*Math.random());
+  // console.log($(this).val());
+  // console.log(indX);
+  if ($(this).val() == 'FOOD') {
+    var pickedWord = cateFood[indX];
+  }else if ($(this).val() == 'COUNTRY'){
+    var pickedWord = cateCoty[indX];
+  }else if ($(this).val() == 'MOVIE') {
+    var pickedWord = cateMovie[indX];
+  }else if ($(this).val() == 'SINGER') {
+    var pickedWord = cateSinger[indX];
+  }else if ($(this).val() == 'PC GAME') {
+    var pickedWord = cateGame[indX];
+  }
+  // console.log(pickedWord);
+  if (pickedWord) {
+  var wordAry = pickedWord.split("");
+  $(wordAry).each(function(index, el) {
+      var $theChar = $(el);
+      var $newDis = $(`<div class = "nD"><p>${el}</p></div>`);
+      $('.displayWords').append($newDis);
+  });
+  thisNub = wordAry.length;
+  $('#inputBut').css('visibility','hidden');
+  }
 });
 //
 //Add Event Listener to keyboard keys
