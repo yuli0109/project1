@@ -51,6 +51,13 @@ $('#resetBut').on('click', function(event) {
   $('div.boardKey').css('visibility','visible');
   $('div.theChar').css('visibility','visible');
   $('#inputBox').val("");
+  clearInte();
+  $('#cateBar').css('visibility','visible');
+  $('#inputBut').css('visibility','visible');
+  $('#inputBox').css('visibility','visible');
+});
+//The function to reset the time interval
+function clearInte(){
   clearInterval(aniMay);
   clearInterval(aniMay2);
   clearInterval(aniMay3);
@@ -58,10 +65,7 @@ $('#resetBut').on('click', function(event) {
   clearInterval(aniMay5);
   clearInterval(aniMay6);
   clearInterval(aniMay7);
-  $('#cateBar').css('visibility','visible');
-  $('#inputBut').css('visibility','visible');
-  $('#inputBox').css('visibility','visible');
-});
+}
 //
 //Add Event Listener to select bar change
 $('#cateBar').on('change', function(event) {
