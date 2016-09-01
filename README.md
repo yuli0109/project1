@@ -1,5 +1,6 @@
 # Hangman game!  
 
+
 >At the begining of the Hangman game, player 1 would type the word(between 6-12 character) in an input box and click the button right beside it. The text in the input box then would be hidden instantly. Of course player 2 could not see the procees of typing. Then player 2 need to type one character in the same type each time or just guess the word directly. Player 2 would have only five chances. If the character is included in the word. The character would show up in the correct postion in that word. 
 ____________
 
