@@ -1,5 +1,5 @@
 # Hangman game!  
-
+![imgeHangman](assets/readmeimg.jpg)
 ### Dsescription of game
 >The Hangman game have single player model and twin player model.  
 >In single player model player should click the selcet bar and pick a category for word. The system would pick a random word from the category library. Then the player could use the artificial keyword to input character.  
