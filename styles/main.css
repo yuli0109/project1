@@ -1,32 +1,28 @@
-body{
+body {
   background: -webkit-linear-gradient(top left, rgba(74,232,224, 0.7), rgba(62,175,237,1));
-  /*border: 3px solid black;*/
   width: 100%;
   margin: 0 auto;
 }
 header {
-  /*border: 3px solid black;*/
   width: 1000px;
   margin: 0 auto;
   margin-top: 10px;
 }
-h1{
+h1 {
   margin: 0 auto;
-  /*border: 3px solid black;*/
   max-width: 600px;
   text-align: center;
   font-size: 40px;
   font-family: 'Pacifico', cursive;
   color: white;
 }
-#inputPart{
+#inputPart {
   width: 800px;
   margin: 0 auto;
   text-align: center;
-  /*border: 3px solid black;*/
   margin-top: 30px;
 }
-#inputBox{
+#inputBox {
   margin-right: 70px;
   width: 300px;
   height: 30px;
@@ -35,7 +31,7 @@ h1{
   color: rgba(124,130,132, 0.6);
   border-radius: 10px;
 }
-#inputBut, #resetBut{
+#inputBut, #resetBut {
   height: 30px;
   width: 60px;
   background-color: #FCF100;
@@ -47,10 +43,10 @@ h1{
   box-shadow: 1px 4px #969193;
   font-family: 'Righteous', cursive;
 }
-#inputBut:hover, #resetBut:hover{
+#inputBut:hover, #resetBut:hover {
   background-color: #B8B600;
 }
-#inputBut:active, #resetBut:active{
+#inputBut:active, #resetBut:active {
   background-color: #B8B600;
   transform: translateY(2px);
   box-shadow: 1px 2px #969193;
@@ -59,46 +55,42 @@ h1{
   font-size: 25px;
   margin-left: 50px;
 }
-main{
-  /*border: 3px solid black;*/
+main {
   width: 1200px;
   height: 600px;
   margin: 0 auto;
   margin-top: 10px;
 }
-.mainLeft{
-  /*border: 3px solid yellow;*/
+.mainLeft {
   width: 500px;
   height: 500px;
   float: left;
   margin: 10px 30px 0 60px;
 }
-.displayWords{
+.displayWords {
   border: 5px groove green;
   width: 400px;
   height: 100px;
   margin: 0 auto;
   margin-top: 30px;
 }
-.keyBoard{
-  /*border: 3px solid red;*/
+.keyBoard {
   width: 400px;
   height: 200px;
   margin: 0 auto;
   margin-top: 100px;
   font-size: 15px;
 }
-.row1, .row2, .row3{
+.row1, .row2, .row3 {
   width: 360px;
   height: 40px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /*border: 1px solid red;*/
   margin: 0 auto;
   margin-top: 5px;
 }
-.row1 div, .row2 div, .row3 div{
+.row1 div, .row2 div, .row3 div {
   border: 1px ridge black;
   border-radius: 10px;
   width: 30px;
@@ -113,33 +105,17 @@ main{
   box-shadow: 2px 2px #969193;
   font-family: 'Righteous', cursive;
 }
-.row1 div:hover, .row2 div:hover, .row3 div:hover{
+.row1 div:hover, .row2 div:hover, .row3 div:hover {
   cursor: pointer;
   background-color: #275187;
 }
-.row1 div:active, .row2 div:active, .row3 div:active{
+.row1 div:active, .row2 div:active, .row3 div:active {
   cursor: pointer;
   background-color: #275187;
   box-shadow: 2px 0px #969193;
   transform: translateY(2px);
 }
-/*.row2 div{
-  border: 1px solid red;
-  width: 30px;
-  height: 40px;
-  display: inline-block;
-  text-align: center;
-  font-weight: bold;
-}
-.row3 div{
-  border: 1px solid red;
-  width: 30px;
-  height: 40px;
-  display: inline-block;
-  text-align: center;
-  font-weight: bold;
-}*/
-div.theChar{
+div.theChar {
   width: 40px;
 }
 #q{
@@ -151,29 +127,27 @@ div.theChar{
 #caP{
   margin-left: 8px;
 }
-.mainRight{
-  /*border: 3px solid yellow;*/
+.mainRight {
   width: 500px;
   height: 500px;
   float: left;
   margin: 10px 30px 0 30px ;
 }
-#canvas1{
+#canvas1 {
   height: 500px;
   width: 500px;
   background-color: pink;
   margin: 0 auto;
   border-radius: 15px;
 }
-div.displayWords{
+div.displayWords {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
-div.nD{
-  /*display: inline-block;*/
+div.nD {
   border: 3px outset rgba(237,105,62,0.2);
   width: 40px;
   height: 40px;
@@ -183,6 +157,6 @@ div.nD{
   align-items: center;
   justify-content: space-around;
 }
-p{
+p {
   visibility: hidden;
 }

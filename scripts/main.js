@@ -1,4 +1,3 @@
-// console.log("js is linked!");
 //Variables
 var $myCanvas = $('#canvas1');
 var wrongGuess = 0; //The count the number of wrong guess
@@ -17,17 +16,20 @@ var cateCoty = ['france','brazil','iceland','norway'];//The array for words in c
 var cateMovie = ['avatar', 'kingsman','titanic','missionimpossible'];//The array for words in movie category
 var cateSinger = ['taylorswift', 'madonna', 'brunomars','adele'];//The array for words in singer category
 var cateGame = ['hearthstone','starcraft','overwatch','warcraft'];//The array for words in game category
+
 //Function to generate word elements in display board//
 function getWord(){
   var $theWord = $('#inputBox').val();
   return($theWord);
 }
 //
+
 //Add Event Listener to input box to remove text and display color in black
 $('#inputBox').on('click', function(event) {
   $(this).val("").css('color','black');
 });
 //
+
 //Add Event Listener to start button
 $('#inputBut').on('click',function(event) {
   var $newWord = getWord();
@@ -43,6 +45,7 @@ $('#inputBut').on('click',function(event) {
   $('#inputBut').css('visibility','hidden');
 });
 //
+
 //Add Event Listener to reset button
 $('#resetBut').on('click', function(event) {
   $('#canvas1').removeLayers();
@@ -56,6 +59,8 @@ $('#resetBut').on('click', function(event) {
   $('#inputBut').css('visibility','visible');
   $('#inputBox').css('visibility','visible');
 });
+//
+
 //The function to reset the time interval
 function clearInte(){
   clearInterval(aniMay);
@@ -67,11 +72,10 @@ function clearInte(){
   clearInterval(aniMay7);
 }
 //
+
 //Add Event Listener to select bar change
 $('#cateBar').on('change', function(event) {
   var indX = Math.round(3*Math.random());
-  // console.log($(this).val());
-  // console.log(indX);
   if ($(this).val() == 'FOOD') {
     var pickedWord = cateFood[indX];
   }else if ($(this).val() == 'COUNTRY'){
@@ -83,7 +87,6 @@ $('#cateBar').on('change', function(event) {
   }else if ($(this).val() == 'PC GAME') {
     var pickedWord = cateGame[indX];
   }
-  // console.log(pickedWord);
   if (pickedWord) {
   var wordAry = pickedWord.split("");
   $(wordAry).each(function(index, el) {
@@ -98,42 +101,44 @@ $('#cateBar').on('change', function(event) {
   }
 });
 //
+
 //Add Event Listener to keyboard keys
 $('div.boardKey').on('click', function(event) {
   cGuess = 0; //Initicalizing the correct guess
   var $oldFriend = $(this).text();
   $('div.nD p').each(function(index, el) {
     if(($oldFriend) == $(el).text().toUpperCase()){
-      // console.log("hello");
       $(el).css('visibility','visible');
       cGuess +=1;
     }
   });
   $(this).css('visibility','hidden');
+  checkCompleted();
   if (cGuess === 0) {  //Judge if the click contains wrong
     makeSomeDraw();
     wrongGuess++;
   }
-  checkCompleted();
 });
 //
+
 //The function will show player2 the answer when they failed
 function showAnswer(){
   $('div.nD p').css('visibility','visible');
 }
 //
+
 //The function that disable further more input if player2 failed
 function noMoreInput(){
 $('div.boardKey').css('visibility','hidden');
 }
 //
+
 //The function to check if player2 has completed
 function checkCompleted (){
   showUp = 0;
   $('div.nD p').each(function(index, el) {
     if ($(el).css('visibility') == 'visible') {
       showUp++;
-      // console.log('showUp');
     }
   });
   if (showUp == thisNub) {
@@ -143,6 +148,7 @@ function checkCompleted (){
   }
 }
 //
+
 //The function to decide with step of drawing it is
 function makeSomeDraw(){
   if (wrongGuess === 0) {
@@ -166,7 +172,6 @@ function makeSomeDraw(){
   }else if (wrongGuess === 9) {
     drawRleg();
     showAnswer();
-    // noMoreInput();
     runAnimay();
     aniMay = setInterval(ropAnimation, 2000);
     aniMay2 = setInterval(headAnimation, 2000);
@@ -179,6 +184,7 @@ function makeSomeDraw(){
   }
 };
 //
+
 //The function to run animation instantly
 function runAnimay(){
   ropAnimation();
@@ -189,6 +195,8 @@ function runAnimay(){
   llegAnimation();
   rlegAnimation();
 }
+//
+
 //
 function drawZero(){
   $myCanvas.drawArc({
