@@ -14,11 +14,8 @@ ____________
 >3. Looping through multi-tags and creating, modifying elements in DOM using jquery
 >4. Using jcanvas to draw on canvas and control the animation.
 
-Pseudocode:
+### Unsolved problems
+>If the hangman is **_not completed_** drawn(The player guessed the word), the reset button would response very, very slowly to the .removeLayer() method. I tried to use other methods such as .clearRect() or canvas.width = canvas.width, but those would have the same issues.
 
-1. The word created by player1 would be store in a variable as a string.
-2. The string would then be split into individual character and each character would be stored in an array by order.
-3. Count the length of that array and create same amount of <div> in html represent the each character. The character would be stored as an property of <div> 
-4. Player 2 could click the aritificial keyboard to input the charcter, if the character was not included, it would be moved to anothr area and would not be able to click again
-5. Also player 2 have choice to input the word directly using the input bot. The input of player 2 and compare with each word, if match, the textContent of <div> would be that character
-6. If player 2 could give that word in five input chance, player 2 wins. Otherwise, player 1 win~  Fun ha?s
+### Link to the game
+[Online playable game click here ](https://yuli0109.github.io/project1/)
