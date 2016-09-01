@@ -40,6 +40,7 @@ $('#inputBut').on('click',function(event) {
   $('#inputBox').val("");
   thisNub = wordAry.length;
   $('#cateBar').css('visibility','hidden');
+  $('#inputBut').css('visibility','hidden');
 });
 //
 //Add Event Listener to reset button
@@ -59,6 +60,7 @@ $('#resetBut').on('click', function(event) {
   clearInterval(aniMay7);
   $('#cateBar').css('visibility','visible');
   $('#inputBut').css('visibility','visible');
+  $('#inputBox').css('visibility','visible');
 });
 //
 //Add Event Listener to select bar change
@@ -87,6 +89,8 @@ $('#cateBar').on('change', function(event) {
   });
   thisNub = wordAry.length;
   $('#inputBut').css('visibility','hidden');
+  $('#inputBox').css('visibility','hidden');
+  $('#cateBar').css('visibility','hidden');
   }
 });
 //
@@ -131,6 +135,7 @@ function checkCompleted (){
   if (showUp == thisNub) {
     $('div.boardKey').css('visibility','hidden');
     $('div.theChar').css('visibility','hidden');
+    alert('You are the winner!!!\nClick reset to restart the game!');
   }
 }
 //
@@ -166,6 +171,7 @@ function makeSomeDraw(){
     aniMay5 = setInterval(rarmAnimation, 2000);
     aniMay6 = setInterval(llegAnimation, 2000);
     aniMay7 = setInterval(rlegAnimation, 2000);
+    alert('You did not get the word...\nClick reset to restart the game');
   }
 };
 //
