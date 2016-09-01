@@ -106,11 +106,11 @@ $('div.boardKey').on('click', function(event) {
     }
   });
   $(this).css('visibility','hidden');
+  checkCompleted();
   if (cGuess === 0) {  //Judge if the click contains wrong
     makeSomeDraw();
     wrongGuess++;
   }
-  checkCompleted();
 });
 //
 //The function will show player2 the answer when they failed
